@@ -1,10 +1,11 @@
 from conexion import *
+from utils import generarId
 
 def guardarFormatos():
     formatos = descargarJson("formatos")
-    id = 44
+    id = generarId("formatos")
     nombre = input("Ingrese el nombre: ")
-    formatos[44] = {"nombre" : nombre}
+    formatos[id] = {"nombre" : nombre}
 
     guardarJson("formatos", formatos)
 

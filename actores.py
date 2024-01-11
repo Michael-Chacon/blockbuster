@@ -1,10 +1,11 @@
 from conexion import *
+from utils import generarId
 
 def guardarActor():
     actores = descargarJson("actores")
-    id = 44
+    id = generarId("peliculas")
     nombre = input("Ingrese el del actor: ")
-    actores[44] = {"nombre" : nombre}
+    actores[id] = {"nombre" : nombre}
 
     guardarJson("actores", actores)
 

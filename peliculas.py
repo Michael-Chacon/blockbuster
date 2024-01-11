@@ -5,6 +5,7 @@ from actores import listarActores
 from formatos import listarFormatos
 
 def agregarPelicula():
+    id = generarId("peliculas")
     generos = descargarJson("generos")
     actores = descargarJson("actores")
     formatos = descargarJson("formatos")
@@ -61,7 +62,7 @@ def agregarPelicula():
             form[idFormato] = {"id": idFormato, "nombre": formatos[idFormato]['nombre'], "NroCopias": copias, "valorPrestamo": valorPrestamo}
         banderaF = romperCiclo("Quiere agregar otro formato?")
 
-    peliculas[2] = {"id": 1, "nombre": nombre.lower(), "duracion": duracion, "sinopsis": sinopsis, "generos": gen, "actores": act, "formato": form}
+    peliculas[id] = {"id": id, "nombre": nombre.lower(), "duracion": duracion, "sinopsis": sinopsis, "generos": gen, "actores": act, "formato": form}
     guardarJson("peliculas", peliculas)
     print("\n--- Pelicula registrada con éxito ---\n")
 
