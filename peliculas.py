@@ -59,7 +59,7 @@ def agregarPelicula():
             copias = input("Numero de copias: ")
             valorPrestamo = input("Valor Prestamo: ")
             form[idFormato] = {"id": idFormato, "nombre": formatos[idFormato]['nombre'], "NroCopias": copias, "valorPrestamo": valorPrestamo}
-        banderaF = romperCiclo("Quiere agregar otro genero?")
+        banderaF = romperCiclo("Quiere agregar otro formato?")
 
     peliculas[2] = {"id": 1, "nombre": nombre.lower(), "duracion": duracion, "sinopsis": sinopsis, "generos": gen, "actores": act, "formato": form}
     guardarJson("peliculas", peliculas)

@@ -16,15 +16,16 @@ while True:
         while banderag:
             os.system("clear")
             print("Gestor de generos\n")
-            print("\t1.Crear Genero \n\t2.Listar genero\n:")
+            print("\t1.Crear Genero \n\t2.Listar genero\n\t3.Salir\n:")
             gen = input(": ")
             if gen == '1':
                 guardarGenero()
             elif gen == '2':
                 listarGeneros()
+            elif gen == '3':
+                break
             else:
-                print("La opción ingresada no es valida, intente de nuevo")
-            banderag = romperCiclo("Esto va en las funciones")
+                break
 
     elif opc == '2':
         banderaa = True
