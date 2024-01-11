@@ -61,7 +61,7 @@ def agregarPelicula():
             form[idFormato] = {"id": idFormato, "nombre": formatos[idFormato]['nombre'], "NroCopias": copias, "valorPrestamo": valorPrestamo}
         banderaF = romperCiclo("Quiere agregar otro genero?")
 
-    peliculas[2] = {"id": 1, "nombre": nombre, "duracion": duracion, "sinopsis": sinopsis, "generos": gen, "actores": act, "formato": form}
+    peliculas[2] = {"id": 1, "nombre": nombre.lower(), "duracion": duracion, "sinopsis": sinopsis, "generos": gen, "actores": act, "formato": form}
     guardarJson("peliculas", peliculas)
     print("\n--- Pelicula registrada con éxito ---\n")
 
@@ -78,6 +78,25 @@ def eliminarPelicula():
         print("--- Pelicula eliminada con éxito")
 
 
+def eliminarActorDPelicula():
+    peliculas = descargarJson("peliculas")
+    print("Seleccione una pelicula:")
+    listarIdNomabre()
+    idPelicula = input("Seleccione la pelicula por su id: ")
+    if idPelicula not in peliculas:
+        print(f"No existe una  pelicula con el id {id}")
+    else:
+        listarActorPelicula(idPelicula)
+        idActor = input("Digite el id del actor que va a borrar")
+        if idActor not in peliculas[idPelicula]['actores']:
+            prnt("no existe un actor con dicho id")
+        else:
+            del peliculas[idPelicula]['actores'][idActor]
+        guardarJson("peliculas", peliculas)
+        print("--- actores eliminado ")
+
+
+
 def listarIdNomabre():
     peliculas = descargarJson("peliculas")
     print(40 * "-")
@@ -88,4 +107,30 @@ def listarIdNomabre():
         print(40 * "-")
 
 
+def listarActorPelicula(idPelicula):
+    peliculas = descargarJson("peliculas")
+    for llave, valor in peliculas[idPelicula]["actores"].items():
+        print(f"{llave}, nombre: {valor['nombre']}")
 
+def porId():
+    peliculas = descargarJson("peliculas")
+    id = input("Indique el id de la pelicula: ")
+    if id not in peliculas: 
+        print("No existe la pelicula")
+    else:
+        print(f"Nombre: {peliculas[id]['nombre']} | Duracion: {peliculas[id]['duracion']} | sinopsis: {peliculas[id]['sinopsis']}")
+
+def porNombre():
+    peliculas = descargarJson("peliculas")
+    nombre = input("Indique el nombre de la pelicula: ").lower()
+
+    for llave, valor in peliculas.items():
+        if valor['nombre'] == nombre:
+            print(f"Nombre: {peliculas[llave]['nombre']} | Duracion: {peliculas[llave]['duracion']} | sinopsis: {peliculas[llave]['sinopsis']}")
+    else:
+        print("-- no existe la pelicula -- ")
+
+def listarPeliculas():
+    peliculas = descargarJson("peliculas")
+    for llave, valor in peliculas.items():
+        print(f"Nombre: {peliculas[llave]['nombre']} | Duracion: {peliculas[llave]['duracion']} | sinopsis: {peliculas[llave]['sinopsis']}\ngeneros: {peliculas[llave]['generos']['nombre']} \nactores: {peliculas[llave]['actores']['nombre']}")

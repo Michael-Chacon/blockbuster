@@ -59,13 +59,27 @@ while True:
         while banderap:
             os.system("clear")
             print("Gestor de peliculas\n")
-            print("\t1.Agregar pelicula \n\t2.Eliminar formatos\n:")
+            print("\t1.Agregar pelicula \n\t2.Eliminar formatos\n\t3.Eliminar actor de una pelicula\n\t4.Buscar pelicula\n\t5.Listar todas las  pelicula\n:")
             peli = input(": ")
             if peli == '1':
                 agregarPelicula()
             elif peli == '2':
                 print("Eliminar Peliculas")
                 eliminarPelicula()
+            elif peli == '3':
+                print("Eliminar Actor de una Peliculas")
+                eliminarActorDPelicula()
+            elif peli == '4':
+                print("Buscar pelicula")
+                opc = input("\t1.Por id \n\t2.Por nombre\n:")
+                if opc == '1':
+                    porId()
+                elif opc == '2':
+                    porNombre()
+            elif peli == '5':
+                print("Listar todas las peliculas")
+                listarPeliculas()
+
             else:
                 print("La opción ingresada no es valida, intente de nuevo")
             banderap = romperCiclo("Esto va en las funciones")
