@@ -3,7 +3,7 @@ from utils import *
 from generos import *
 from actores import *
 from formatos import *
-from peliculas import agregarPelicula
+from peliculas import *
 
 
 print("Welcome to Blockbuster")
@@ -64,8 +64,8 @@ while True:
             if peli == '1':
                 agregarPelicula()
             elif peli == '2':
-                print("Editar Pelicula")
-                pass
+                print("Listar Peliculas")
+                listarIdNomabre()
             else:
                 print("La opción ingresada no es valida, intente de nuevo")
             banderap = romperCiclo("Esto va en las funciones")

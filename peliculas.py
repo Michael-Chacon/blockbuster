@@ -63,7 +63,17 @@ def agregarPelicula():
 
     peliculas[2] = {"id": 1, "nombre": nombre, "duracion": duracion, "sinopsis": sinopsis, "generos": gen, "actores": act, "formato": form}
     guardarJson("peliculas", peliculas)
+    print("\n--- Pelicula registrada con éxito ---\n")
 
-    return gen
+
+def listarIdNomabre():
+    peliculas = descargarJson("peliculas")
+    print(40 * "-")
+    print("ID \t| NOMBRE")
+    print(40 * "-")
+    for llave, valor in peliculas.items():
+        print(f"{llave} \t| {valor['nombre']}")
+        print(40 * "-")
+
 
 
