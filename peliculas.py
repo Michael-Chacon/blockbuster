@@ -66,6 +66,18 @@ def agregarPelicula():
     print("\n--- Pelicula registrada con éxito ---\n")
 
 
+def eliminarPelicula():
+    peliculas = descargarJson("peliculas")
+    listarIdNomabre()
+    idPelicula = input("Seleccione la pelicula por su id: ")
+    if idPelicula not in peliculas:
+        print(f"No existe una  pelicula con el id {id}")
+    else:
+        del peliculas[idPelicula]
+        guardarJson("peliculas", peliculas)
+        print("--- Pelicula eliminada con éxito")
+
+
 def listarIdNomabre():
     peliculas = descargarJson("peliculas")
     print(40 * "-")
