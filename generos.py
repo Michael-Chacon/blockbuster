@@ -4,7 +4,7 @@ def guardarGenero():
     generos = descargarJson("generos")
     id = 44
     nombre = input("Ingrese el nombre: ")
-    generos[44] = {"nombre" : nombre}
+    generos[3] = {"nombre" : nombre}
 
     guardarJson("generos", generos)
 

@@ -1,8 +1,17 @@
 {
-   "44": {
-      "nombre": "gattaca"
+   "1": {
+      "nombre": "Suspense"
    },
-   "44": {
-      "nombre": "Cristian Bale"
+   "2": {
+      "nombre": "drama"
+   },
+   "3": {
+      "nombre": "drama"
+   },
+   "4": {
+      "nombre": "Humor"
+   },
+   "5": {
+      "nombre": "Terror"
    }
 }

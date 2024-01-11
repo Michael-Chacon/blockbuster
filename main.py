@@ -1,7 +1,11 @@
 import os
+from utils import *
 from generos import *
 from actores import *
-from utils import *
+from formatos import *
+from peliculas import agregarPelicula
+
+
 print("Welcome to Blockbuster")
 while True:
     print("Menú principal - Sistema gestor de peliculas\n")
@@ -50,4 +54,19 @@ while True:
             else:
                 print("La opción ingresada no es valida, intente de nuevo")
             banderaf = romperCiclo("Esto va en las funciones")
+    elif opc == '4':
+        banderap = True
+        while banderap:
+            os.system("clear")
+            print("Gestor de peliculas\n")
+            print("\t1.Agregar pelicula \n\t2.Listar formatos\n:")
+            peli = input(": ")
+            if peli == '1':
+                agregarPelicula()
+            elif peli == '2':
+                print("Editar Pelicula")
+                pass
+            else:
+                print("La opción ingresada no es valida, intente de nuevo")
+            banderap = romperCiclo("Esto va en las funciones")
     break

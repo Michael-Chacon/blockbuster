@@ -4,7 +4,6 @@ def romperCiclo(mensaje):
     opcion = input(": ")
     if opcion == 'n':
         return False
-    elif opcion != 's' and opcion != 'n':
-        print("Error opcion incorrecta: Enter para continuar")
+    else: 
         return True
         
