@@ -1,13 +1,15 @@
 from conexion import *
-from utils import generarId
+from utils import *
 
 def guardarFormatos():
-    formatos = descargarJson("formatos")
-    id = generarId("formatos")
-    nombre = input("Ingrese el nombre: ")
-    formatos[id] = {"nombre" : nombre}
-
-    guardarJson("formatos", formatos)
+    bandera = True
+    while bandera:
+        formatos = descargarJson("formatos")
+        id = generarId("formatos")
+        nombre = input("Ingrese el nombre: ")
+        formatos[id] = {"nombre" : nombre}
+        guardarJson("formatos", formatos)
+        bandera = romperCiclo("Quiere almacenar otro formato? ")
 
 
 def listarFormatos():

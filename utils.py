@@ -1,7 +1,7 @@
 from conexion import descargarJson
 def romperCiclo(mensaje):
-    print(f"{mensaje} \n\ts: si\n\tn: no")
-    opcion = input(": ")
+    print(f"\n{mensaje} \n\ts: si\n\tn: no\n")
+    opcion = input("")
     if opcion == 'n':
         return False
     else: 
@@ -16,4 +16,4 @@ def generarId(archivo):
         idDiccionario = list(modulo.keys())[-1]
         id = int(idDiccionario) + 1
         print(id)
-    return id;
+    return id

@@ -1,14 +1,15 @@
 from conexion import *
-from utils import generarId
+from utils import *
 
 def guardarGenero():
-    generos = descargarJson("generos")
-    id = generarId("generos")
-    nombre = input("Ingrese el nombre: ")
-    generos[id] = {"nombre" : nombre}
-
-    guardarJson("generos", generos)
-
+    bandera = True
+    while bandera:
+        generos = descargarJson("generos")
+        id = generarId("generos")
+        nombre = input("Ingrese el nombre: ")
+        generos[id] = {"nombre" : nombre}
+        guardarJson("generos", generos)
+        bandera = romperCiclo("\nQuiere registrar otro genero?")
 
 def listarGeneros():
     generos = descargarJson("generos")
@@ -18,5 +19,6 @@ def listarGeneros():
     for llave, valor in generos.items():
         print(f"{llave} \t|{valor['nombre']}")
         print(40 * "-")
+    
 
 

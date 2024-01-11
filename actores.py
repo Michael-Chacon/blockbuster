@@ -1,13 +1,15 @@
 from conexion import *
-from utils import generarId
+from utils import *
 
 def guardarActor():
-    actores = descargarJson("actores")
-    id = generarId("peliculas")
-    nombre = input("Ingrese el del actor: ")
-    actores[id] = {"nombre" : nombre}
-
-    guardarJson("actores", actores)
+    bandera = True
+    while bandera:
+        actores = descargarJson("actores")
+        id = generarId("actores")
+        nombre = input("Ingrese el del actor: ")
+        actores[id] = {"nombre" : nombre}
+        guardarJson("actores", actores)
+        bandera = romperCiclo("Quiere almacenar otro actor? ")
 
 
 def listarActores():
@@ -18,5 +20,6 @@ def listarActores():
     for llave, valor in actores.items():
         print(f"{llave} \t|{valor['nombre']}")
         print(40 * "-")
+    
 
 
