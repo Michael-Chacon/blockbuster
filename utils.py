@@ -17,3 +17,32 @@ def generarId(archivo):
         id = int(idDiccionario) + 1
         print(id)
     return id
+
+
+def validar(tipo):
+    while True:
+        campo = input(": ")
+        print(type(campo) == 'str')
+        if tipo == int:
+            if campo.isdigit():
+                return campo
+            else:
+                print("tipo de dato incorrecto, ingrese un número entero")
+        elif tipo == str:
+            palabras = campo
+            campo = campo.replace(" ","")
+            if campo.isalpha():
+                return palabras
+            else:
+                print("tipo de dato incorrecto, ingrese un texto")
+        elif tipo == float:
+            if not campo.isalpha():
+                try:
+                    campo = float(campo)
+                    return campo
+                except:
+                    print("tipo de dato incorrecto, ingrese un decimal (.)")
+            else:
+                print("tipo de dato incorrecto, ingrese un decimal (.)")
+        else:
+                print("tipo de dato incorrecto, ingrese el dato nuevamente")
