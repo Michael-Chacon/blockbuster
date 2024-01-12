@@ -17,7 +17,8 @@ def agregarPelicula():
         print("\n--- Agregar Peliculas ---\n")
         id = generarId("peliculas")
         print("agregar pelicula")
-        nombre = input("Nombre: ")
+        print("Nombre: ")
+        nombre = validar(str)
         print("Género: ")
         bandera = True
         gen = {}
@@ -27,10 +28,11 @@ def agregarPelicula():
             if idGenero not in generos:
                 print("El id no existe")
             else:
-                gen[idGenero] = {"id": idGenero, "nombre": generos[idGenero]["nombre"]}
+                gen[idGenero] = {"id": idGenero, "nombre": generos[idGenero]["nombre"]}  
             bandera = romperCiclo("Quiere agregar otro genero?")
         
         duracion = input("Duración: ")
+        
         sinopsis = input("Sinopsis\n: ")
 
         print("Seleccionar actores\n")
@@ -48,7 +50,7 @@ def agregarPelicula():
                 elif rol == '2':
                     rolR = 'Antogonista'
                 elif rol == '3':
-                    rolR = "Extra"
+                    rolR = 'Extra'
                 else:
                     print("El rol seleccionado no existe")
                 act[idActor] = {"id": idActor, "nombre": actores[idActor]["nombre"], "rol": rolR}
@@ -59,7 +61,7 @@ def agregarPelicula():
         banderaF = True
         while banderaF:
             listarFormatos()
-            idFormato = input("Escriba el id del actor: ")
+            idFormato = input("Escriba el id del formato: ")
             if idFormato not in formatos:
                 print("El id no existe")
             else:
@@ -154,6 +156,6 @@ def listarPeliculas():
     print("--- Listar todas las peliculas ---")
     peliculas = descargarJson("peliculas")
     for llave, valor in peliculas.items():
-        print(f"Nombre: {peliculas[llave]['nombre']}  | Duracion: {peliculas[llave]['duracion']} | sinopsis: {peliculas[llave]['sinopsis']}\ngeneros: {peliculas[llave]['generos']} \nactores: {peliculas[llave]['actores']}")
+        print(f"Nombre: {peliculas[llave]['nombre']}  | Duracion: {peliculas[llave]['duracion']} | sinopsis: {peliculas[llave]['sinopsis']}\ngeneros: {[ nombre for nombre in recorrerDiccionario(peliculas[llave]['generos'])]} \nactores: {[ nombre for nombre in recorrerDiccionario(peliculas[llave]['actores'])]}")
     
     salir = input("\nSi no muestra nada no existe la pelicula. Enter para salir ")

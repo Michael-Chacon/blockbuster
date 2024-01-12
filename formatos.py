@@ -6,7 +6,8 @@ def guardarFormatos():
     while bandera:
         formatos = descargarJson("formatos")
         id = generarId("formatos")
-        nombre = input("Ingrese el nombre: ")
+        print("Ingrese el nombre: ")
+        nombre = validar(str)
         formatos[id] = {"nombre" : nombre}
         guardarJson("formatos", formatos)
         bandera = romperCiclo("Quiere almacenar otro formato? ")

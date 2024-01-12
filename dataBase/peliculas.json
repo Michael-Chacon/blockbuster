@@ -1,1 +1,44 @@
-{}
+{
+   "1": {
+      "id": 1,
+      "nombre": "batman",
+      "duracion": "126",
+      "sinopsis": "fjklfjal kjadflfjk",
+      "generos": {
+         "1": {
+            "id": "1",
+            "nombre": "suspense"
+         },
+         "2": {
+            "id": "2",
+            "nombre": "drama"
+         }
+      },
+      "actores": {
+         "3": {
+            "id": "3",
+            "nombre": "Cristian Bale",
+            "rol": "Protagonista"
+         },
+         "1": {
+            "id": "1",
+            "nombre": "mighel",
+            "rol": "Extra"
+         }
+      },
+      "formato": {
+         "2": {
+            "id": "2",
+            "nombre": "dvd",
+            "NroCopias": "6",
+            "valorPrestamo": "452"
+         },
+         "3": {
+            "id": "3",
+            "nombre": "blueray",
+            "NroCopias": "4",
+            "valorPrestamo": "123"
+         }
+      }
+   }
+}

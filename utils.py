@@ -1,4 +1,6 @@
 from conexion import descargarJson
+
+
 def romperCiclo(mensaje):
     print(f"\n{mensaje} \n\ts: si\n\tn: no\n")
     opcion = input("")
@@ -22,7 +24,6 @@ def generarId(archivo):
 def validar(tipo):
     while True:
         campo = input(": ")
-        print(type(campo) == 'str')
         if tipo == int:
             if campo.isdigit():
                 return campo
@@ -46,3 +47,9 @@ def validar(tipo):
                 print("tipo de dato incorrecto, ingrese un decimal (.)")
         else:
                 print("tipo de dato incorrecto, ingrese el dato nuevamente")
+
+def recorrerDiccionario(generos):
+    arr = []
+    for llave, valor in generos.items():
+        arr.append(valor['nombre'])
+    return arr

@@ -6,7 +6,8 @@ def guardarGenero():
     while bandera:
         generos = descargarJson("generos")
         id = generarId("generos")
-        nombre = input("Ingrese el nombre: ")
+        print("Ingrese el nombre: ")
+        nombre = validar(str)
         generos[id] = {"nombre" : nombre}
         guardarJson("generos", generos)
         bandera = romperCiclo("\nQuiere registrar otro genero?")
