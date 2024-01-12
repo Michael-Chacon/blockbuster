@@ -40,5 +40,36 @@
             "valorPrestamo": "123"
          }
       }
+   },
+   "2": {
+      "id": 2,
+      "nombre": "gattaca",
+      "duracion": "121",
+      "sinopsis": "bla bla blablabla bla bla",
+      "generos": {
+         "2": {
+            "id": "2",
+            "nombre": "drama"
+         },
+         "1": {
+            "id": "1",
+            "nombre": "suspense"
+         }
+      },
+      "actores": {
+         "2": {
+            "id": "2",
+            "nombre": "Di caprio",
+            "rol": "Protagonista"
+         }
+      },
+      "formato": {
+         "1": {
+            "id": "1",
+            "nombre": "dkfjdl",
+            "NroCopias": "7",
+            "valorPrestamo": "1200"
+         }
+      }
    }
 }

@@ -48,8 +48,9 @@ def validar(tipo):
         else:
                 print("tipo de dato incorrecto, ingrese el dato nuevamente")
 
+
 def recorrerDiccionario(generos):
     arr = []
-    for llave, valor in generos.items():
+    for _, valor in generos.items():
         arr.append(valor['nombre'])
     return arr
