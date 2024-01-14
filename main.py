@@ -10,7 +10,7 @@ print("Welcome to Blockbuster")
 while True:
     os.system("clear")
     print("Menú principal - Sistema gestor de peliculas\n")
-    print("\t1. Gestor de genero \n\t2. Gestor de actores \n\t3. Gestor de formatos \n\t4. Gestor de peliculas\n\t0. Salir\n:")
+    print("\t1. Gestor de genero \n\t2. Gestor de actores \n\t3. Gestor de formatos \n\t4. Gestor de peliculas\n\t5. Gestor de informes\n\t0. Salir\n:")
     opc = input("Seleccione la opcion: ")
     if opc == '1':
         banderag = True
@@ -100,7 +100,22 @@ while True:
             else:
                 print("La opción ingresada no es valida, intente de nuevo")
                 salir = input("Opcion incorrecta, enter para continuar")
-
+    elif opc == '5':
+        banderai = True
+        while banderai:
+            os.system("clear")
+            print("Gestor de informes\n")
+            print("\t1. Listar las peliculas de un genero especifico \n\t2. Listar las peliculas donde el prota sea Silvester Stallone\n\t3. Salir")
+            act = input(": ")
+            if act == '1':
+                guardarActor()
+            elif act == '2':
+                listarActores()
+                salir = input("enter..")
+            elif act == '3':
+                banderai = False
+            else:
+                salir = input("la opcion no es valida, enter para continuar")
     elif opc == '0':
         break
     else: 
