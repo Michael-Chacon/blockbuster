@@ -47,10 +47,6 @@
       "duracion": "121",
       "sinopsis": "bla bla blablabla bla bla",
       "generos": {
-         "2": {
-            "id": "2",
-            "nombre": "drama"
-         },
          "1": {
             "id": "1",
             "nombre": "suspense"
@@ -61,6 +57,11 @@
             "id": "2",
             "nombre": "Di caprio",
             "rol": "Protagonista"
+         },
+         "4": {
+            "id": "4",
+            "nombre": "Silvester Stallone",
+            "rol": "TAL"
          }
       },
       "formato": {

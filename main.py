@@ -1,5 +1,6 @@
 import os
 from utils import *
+from informes import*
 from generos import *
 from actores import *
 from formatos import *
@@ -108,10 +109,9 @@ while True:
             print("\t1. Listar las peliculas de un genero especifico \n\t2. Listar las peliculas donde el prota sea Silvester Stallone\n\t3. Salir")
             act = input(": ")
             if act == '1':
-                guardarActor()
+                pelisPorGenero()
             elif act == '2':
-                listarActores()
-                salir = input("enter..")
+                Stallone()
             elif act == '3':
                 banderai = False
             else:

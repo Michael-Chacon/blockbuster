@@ -18,7 +18,7 @@ def listarGeneros():
     print("ID \t| NOMBRE")
     print(40 * "-")
     for llave, valor in generos.items():
-        print(f"{llave} \t|{valor['nombre']}")
+        print(f"{llave} \t| {valor['nombre'].title()}")
         print(40 * "-")
     
 

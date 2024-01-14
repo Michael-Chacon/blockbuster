@@ -6,7 +6,7 @@ def guardarActor():
     while bandera:
         actores = descargarJson("actores")
         id = generarId("actores")
-        print("Ingrese el del actor: ")
+        print("Ingrese el nombre del actor: ")
         nombre = validar(str)
         actores[id] = {"nombre" : nombre}
         guardarJson("actores", actores)
